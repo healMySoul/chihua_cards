@@ -1,0 +1,14 @@
+{
+    "name": "sonic/chihua_cards",
+    "description": "Memes save life!",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Anton Sanakoev",
+            "email": "totum42@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {}
+}
