@@ -1,0 +1,22 @@
+name: Linode Workflow
+on: 
+  push:
+    branches: [ master ]
+  
+jobs:
+  deploy:
+    name: Deploy
+    runs-on: ubuntu-latest
+    steps:
+    - name: executing remote ssh commands
+      uses: appleboy/ssh-action@master
+      with:
+        host: ${{ secrets.LINODE_HOST }}
+        username: ${{ secrets.LINODE_USERNAME }}
+        key: ${{ secrets.LINODE_SECRET }}
+        port: ${{ secrets.LINODE_PORT }}
+        script: |
+          cd /var/www/html/public
+          git pull origin master
+          git status
+          
