@@ -57,48 +57,59 @@
     }
 
     .card {
-        background: #60977e;
-        border: 2px solid white;
         cursor: pointer;
         flex: 0 0 auto;
         margin: 15px;
         position: relative;
-        padding-top: calc(100% * (1/var(--items-per-row)) - 15px * 2);
-        width: calc(100% * (1/var(--items-per-row)) - 15px * 2);
+        padding-top: calc(100% * (1/var(--items-per-row)) - 15px * 2 - 1px);
+        width: calc(100% * (1/var(--items-per-row)) - 15px * 2 - 1px);
     }
 
-    .card .meme {
-        background-size: cover;
+    .card-content {
+        border: 2px solid white;
         height: 100%;
         left: 0;
         position: absolute;
         top: 0;
-        visibility: hidden;
+        width: 100%;
+        transform-style: preserve-3d;
+        transition: transform 900ms, border-color 600ms;
+    }
+
+    .card-front,
+    .card-back {
+        backface-visibility: hidden;
+        height: 100%;
+        left: 0;
+        position: absolute;
+        top: 0;
         width: 100%;
     }
 
-    .card[data-flipped="try"] {
+    .card-front {
+        background: #60977e;
+    }
+
+    .card-back {
+        background-size: cover;
+        transform: rotateY(180deg);
+    }
+
+    .card[data-flipped] .card-content {
+        transform: rotateY(180deg);
+        transition: transform 600ms, border-color 600ms;
+    }
+
+    .card[data-flipped="try"] .card-content {
         border-color: khaki;
     }
 
-    .card[data-flipped="correct"] {
+    .card[data-flipped="correct"] .card-content {
         border-color: #76ddad;
     }
 
-    .card[data-flipped="error"] {
+    .card[data-flipped="error"] .card-content {
         border-color: #a83939;
-    }
-
-    .card[data-flipped] .meme {
-        visibility: visible;
-    }
-
-    .card span {
-        display: none;
-        font-size: 20px;
-        left: 50%;
-        position: absolute;
-        top: 50%;
     }
 
     img {
@@ -179,8 +190,7 @@
                     let randomValueIndex = Math.floor(Math.random() * values.length);
                     let randomValue = values.splice(randomValueIndex, 1)[0];
                     
-                    card.html('<div class="meme" style="background-image: url(img/covers/' + randomValue + '.jpg)"></div>').attr('data-value', randomValue);
-                    //card.css('--cover-img', 'url(img/covers/' + randomValue + '.jpg)');
+                    card.html('<div class="card-content"><div class="card-front"></div><div class="card-back" style="background-image: url(img/covers/' + randomValue + '.jpg)"></div></div>').attr('data-value', randomValue);
 
                     card.click(function() {
                         card.attr('data-flipped', 'try');
