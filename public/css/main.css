@@ -1,5 +1,139 @@
 @charset "utf-8";
 
+html {
+    height: 100%;
+    width: 100%;
+}
+
 body {
     font-family: Arial, Helvetica, sans-serif;
+    min-height: 100%;
+    width: 100%;
+}
+
+.container {
+    background-color: #3a3939;
+    min-height: 100vh;
+    padding: 20px;
+    text-align: center;
+    width: 100%;
+}
+
+.btn-reset {
+    background-color: #338160;
+    border: 2px solid #ccc;
+    color: #eeeeee;
+    cursor: pointer;
+    display: none;
+    font-size: 20px;
+    font-weight: bold;
+    height: 36px;
+    margin-bottom: 10px;
+    padding: 0 12px;
+}
+
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 0 auto;
+    width: 50%;
+}
+
+.cards[data-items-per-row="3"] .card {
+    --items-per-row: 3;
+}
+
+.cards[data-items-per-row="4"] .card {
+    --items-per-row: 4;
+}
+
+.card {
+    cursor: pointer;
+    flex: 0 0 auto;
+    margin: 15px;
+    position: relative;
+    padding-top: calc(100% * (1/var(--items-per-row)) - 15px * 2 - 1px);
+    width: calc(100% * (1/var(--items-per-row)) - 15px * 2 - 1px);
+}
+
+.card-content {
+    border: 2px solid white;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    transform-style: preserve-3d;
+    transition: transform 900ms, border-color 600ms;
+}
+
+.card-front,
+.card-back {
+    backface-visibility: hidden;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+
+.card-front {
+    background: #60977e;
+}
+
+.card-back {
+    background-size: cover;
+    transform: rotateY(180deg);
+}
+
+.card[data-flipped] .card-content {
+    transform: rotateY(180deg);
+    transition: transform 600ms, border-color 600ms;
+}
+
+.card[data-flipped="try"] .card-content {
+    border-color: khaki;
+}
+
+.card[data-flipped="correct"] .card-content {
+    border-color: #76ddad;
+}
+
+.card[data-flipped="error"] .card-content {
+    border-color: #a83939;
+}
+
+img {
+    max-width: 400px;
+    max-height: 600px;
+}
+
+.try-counter {
+    color: #a7a7a7;
+    text-align: center;
+}
+
+.try-counter:after {
+    content: attr(data-tries-left);
+}
+
+.try-counter:before {
+    content: 'Осталось попыток: ';
+}
+
+@media (max-width: 762px) {
+    .cards {
+        width: 80%;
+    } 
+}
+
+@media (max-width: 550px) {
+    .cards {
+        width: 96%;
+    } 
+
+    .cards .card {
+        --items-per-row: 3 !important;
+    }
 }
