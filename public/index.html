@@ -30,14 +30,14 @@
     }
 
     .btn-reset {
-        background-color: #ad353f;
+        background-color: #338160;
         border: 2px solid #ccc;
         color: #eeeeee;
         cursor: pointer;
         font-size: 20px;
         font-weight: bold;
-        height: 30px;
-        width: 100px;
+        height: 36px;
+        padding: 0 12px;
     }
 
     .cards {
@@ -57,7 +57,7 @@
     }
 
     .card {
-        background-color: #526c78;
+        background: #60977e;
         border: 2px solid white;
         cursor: pointer;
         flex: 0 0 auto;
@@ -67,20 +67,30 @@
         width: calc(100% * (1/var(--items-per-row)) - 15px * 2);
     }
 
+    .card .meme {
+        background-size: cover;
+        height: 100%;
+        left: 0;
+        position: absolute;
+        top: 0;
+        visibility: hidden;
+        width: 100%;
+    }
+
     .card[data-flipped="try"] {
-        background-color: khaki;
+        border-color: khaki;
     }
 
     .card[data-flipped="correct"] {
-        background-color: #76ddad;
+        border-color: #76ddad;
     }
 
     .card[data-flipped="error"] {
-        background-color: rgb(168, 57, 57);
+        border-color: #a83939;
     }
 
-    .card[data-flipped] span {
-        display: inline-block;
+    .card[data-flipped] .meme {
+        visibility: visible;
     }
 
     .card span {
@@ -107,10 +117,26 @@
     .try-counter:before {
         content: 'Осталось попыток: ';
     }
+
+    @media (max-width: 762px) {
+        .cards {
+            width: 80%;
+        } 
+    }
+
+    @media (max-width: 550px) {
+        .cards {
+            width: 96%;
+        } 
+
+        .cards .card {
+            --items-per-row: 2 !important;
+        }
+    }
 </style>
 <body>
     <div class="container">
-        <button class="btn-reset">Reset</button>
+        <button class="btn-reset">Начать заново</button>
         <br><br>
         <span class="try-counter" data-tries-left=""></span>
 
@@ -152,8 +178,9 @@
 
                     let randomValueIndex = Math.floor(Math.random() * values.length);
                     let randomValue = values.splice(randomValueIndex, 1)[0];
-
-                    card.html('<span>' + randomValue + '</span>').attr('data-value', randomValue);
+                    
+                    card.html('<div class="meme" style="background-image: url(img/covers/' + randomValue + '.jpg)"></div>').attr('data-value', randomValue);
+                    //card.css('--cover-img', 'url(img/covers/' + randomValue + '.jpg)');
 
                     card.click(function() {
                         card.attr('data-flipped', 'try');
