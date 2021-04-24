@@ -224,10 +224,5 @@ body {
 @media (max-width: 550px) {
     .cards {
         width: 96%;
-    } 
-
-    .cards .card-wrapper {
-        padding-top: 48%;
-        width: 48%;
     }
 }
