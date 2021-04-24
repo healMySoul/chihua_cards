@@ -60,7 +60,7 @@ body {
 }
 
 .doggo-u-r {
-    margin: 0 -50px -50px 0;
+    margin: -50px -50px 0 0;
     right: 0;
     top: 0;
 }
@@ -224,5 +224,10 @@ body {
 @media (max-width: 550px) {
     .cards {
         width: 96%;
+    }
+
+    .doggo {
+        max-height: 200px;
+        max-width: 200px;
     }
 }
