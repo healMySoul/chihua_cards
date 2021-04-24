@@ -230,4 +230,8 @@ body {
         max-height: 200px;
         max-width: 200px;
     }
+
+    .try-counter {
+        font-size: 24px;
+    }
 }
