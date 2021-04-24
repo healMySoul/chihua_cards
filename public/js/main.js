@@ -15,11 +15,11 @@ class Cards {
 
     generateCards(itemsPerRow, rows) {
         this.root.attr('data-items-per-row', itemsPerRow);
-        this.root.append(new Array(itemsPerRow * rows + 1).join('<div class="card"></div>'));
+        this.root.append(new Array(itemsPerRow * rows + 1).join('<div class="card-wrapper"></div>'));
     }
 
     initCards() {
-        let cards = this.root.find('.card');
+        let cards = this.root.find('.card-wrapper');
         let tryCounter = $('.try-counter');
         let maxValue = cards.length / 2;
         let values = []

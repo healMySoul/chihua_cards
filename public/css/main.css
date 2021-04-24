@@ -101,21 +101,21 @@ body {
     width: 50%;
 }
 
-.cards[data-items-per-row="3"] .card {
+.cards[data-items-per-row="3"] .card-wrapper {
     --items-per-row: 3;
 }
 
-.cards[data-items-per-row="4"] .card {
+.cards[data-items-per-row="4"] .card-wrapper {
     --items-per-row: 4;
 }
 
-.card {
+.card-wrapper {
     cursor: pointer;
     flex: 0 0 auto;
-    margin: 15px;
+    margin: 1%;
     position: relative;
-    padding-top: calc(100% * (1/var(--items-per-row)) - 15px * 2 - 1px);
-    width: calc(100% * (1/var(--items-per-row)) - 15px * 2 - 1px);
+    padding-top: 23%;
+    width: 23%;
 }
 
 .card-content {
@@ -149,20 +149,20 @@ body {
     transform: rotateY(180deg);
 }
 
-.card[data-flipped] .card-content {
+.card-wrapper[data-flipped] .card-content {
     transform: rotateY(180deg);
     transition: transform 600ms, border-color 600ms;
 }
 
-.card[data-flipped="try"] .card-content {
+.card-wrapper[data-flipped="try"] .card-content {
     border-color: #fff7ae;
 }
 
-.card[data-flipped="correct"] .card-content {
+.card-wrapper[data-flipped="correct"] .card-content {
     border-color: #76ddad;
 }
 
-.card[data-flipped="error"] .card-content {
+.card-wrapper[data-flipped="error"] .card-content {
     border-color: #d25050;
 }
 
@@ -207,6 +207,8 @@ body {
 
 .result-modal .doge-reaction {
     margin-bottom: 30px;
+    max-height: 400px;
+    max-width: 400px;
 }
 
 .result-modal .try-again-link {
@@ -224,7 +226,7 @@ body {
         width: 96%;
     } 
 
-    .cards .card {
+    .cards .card-wrapper {
         --items-per-row: 3 !important;
     }
 }
