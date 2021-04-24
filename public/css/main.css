@@ -28,6 +28,14 @@ body {
     width: 100%;
 }
 
+.blur {
+    height: 100%;
+    opacity: 0.6;
+    position: absolute;
+    width: 100%;
+    z-index: 9;
+}
+
 .game-wrapper {
     height: 100%;
     width: 100%;
@@ -39,6 +47,8 @@ body {
 }
 
 .doggo {
+    max-width: 400px;
+    max-height: 600px;
     position: absolute;
     z-index: 10;
 }
@@ -154,11 +164,6 @@ body {
 
 .card[data-flipped="error"] .card-content {
     border-color: #d25050;
-}
-
-img {
-    max-width: 400px;
-    max-height: 600px;
 }
 
 .try-counter {
