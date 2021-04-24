@@ -227,6 +227,7 @@ body {
     } 
 
     .cards .card-wrapper {
-        --items-per-row: 3 !important;
+        padding-top: 48%;
+        width: 48%;
     }
 }
