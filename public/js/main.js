@@ -67,8 +67,8 @@ class Cards {
 
                 if (unflippedCards.length == 0) {
                     setTimeout(function() {  
-                        $('.btn-reset').show();
-                        alert('Вы выиграли!');
+                        $('.btn-reset').addClass('btn-reset__visible');
+                        $('#win-modal').modal('show');
                     }, 300)
                 } else {
                     if (tryCounter.attr('data-tries-left') == 0) {
@@ -79,8 +79,8 @@ class Cards {
                         cards.unbind('click');
                         
                         setTimeout(function() {
-                            $('.btn-reset').show();
-                            alert('Вы проиграли :(');
+                            $('.btn-reset').addClass('btn-reset__visible');
+                            $('#loose-modal').modal('show');
                         }, 300);
 
                         return;
@@ -103,5 +103,5 @@ $(document).ready(function() {
         cards.reset();
     });
 
-    $('.try-counter').attr('data-tries-left', 10);
+    $('.try-counter').attr('data-tries-left', 15);
 });

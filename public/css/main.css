@@ -6,30 +6,81 @@ html {
 }
 
 body {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Ubuntu', sans-serif !important;
     min-height: 100%;
+    position: relative;
     width: 100%;
 }
 
-.container {
-    background-color: #3a3939;
+.main-container {
+    align-items: center;
+    background-image: url("../img/bg.png");
+    background-repeat: no-repeat;
+    background-color: hsla(34, 98%, 75%, 0.66);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     min-height: 100vh;
+    overflow: hidden;
     padding: 20px;
+    position: relative;
     text-align: center;
     width: 100%;
 }
 
+.game-wrapper {
+    height: 100%;
+    width: 100%;
+    z-index: 11;
+}
+
+.doggo-wrapper {
+    z-index: 10;
+}
+
+.doggo {
+    position: absolute;
+    z-index: 10;
+}
+
+.doggo-u-l {
+    margin: -50px 0 0 -50px;
+    left: 0;
+    top: 0;
+}
+
+.doggo-u-r {
+    margin: 0 -50px -50px 0;
+    right: 0;
+    top: 0;
+}
+
+.doggo-d-l {
+    margin:  0 0 -50px -50px;
+    bottom: 0;
+    left: 0;
+}
+
+.doggo-d-r {
+    margin: 0 -50px -50px 0;
+    bottom: 0;
+    right: 0;
+}
+
 .btn-reset {
-    background-color: #338160;
-    border: 2px solid #ccc;
+    background: #ff0d61;
+    border-radius: 5px;
     color: #eeeeee;
     cursor: pointer;
-    display: none;
     font-size: 20px;
-    font-weight: bold;
-    height: 36px;
-    margin-bottom: 10px;
-    padding: 0 12px;
+    height: 54px;
+    margin-top: 15px;
+    visibility: hidden;
+    width: 266px;
+}
+
+.btn-reset__visible {
+    visibility: visible;
 }
 
 .cards {
@@ -58,7 +109,8 @@ body {
 }
 
 .card-content {
-    border: 2px solid white;
+    border: 6px solid white;
+    border-radius: 5px;
     height: 100%;
     left: 0;
     position: absolute;
@@ -79,7 +131,7 @@ body {
 }
 
 .card-front {
-    background: #60977e;
+    background: #ffeacf;
 }
 
 .card-back {
@@ -93,7 +145,7 @@ body {
 }
 
 .card[data-flipped="try"] .card-content {
-    border-color: khaki;
+    border-color: #fff7ae;
 }
 
 .card[data-flipped="correct"] .card-content {
@@ -101,7 +153,7 @@ body {
 }
 
 .card[data-flipped="error"] .card-content {
-    border-color: #a83939;
+    border-color: #d25050;
 }
 
 img {
@@ -110,8 +162,13 @@ img {
 }
 
 .try-counter {
-    color: #a7a7a7;
+    color: #2691F9;
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 15px;
     text-align: center;
+    text-shadow: 1px 1px #555;
+    text-transform: uppercase;
 }
 
 .try-counter:after {
@@ -120,6 +177,35 @@ img {
 
 .try-counter:before {
     content: 'Осталось попыток: ';
+}
+
+.result-modal * {
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.result-modal .modal-body {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 500px;
+    max-height: 100%;
+    max-width: 100%;
+    width: 500px;
+}
+
+.result-modal .result-text {
+    color: hsla(211, 100%, 56%, 1);
+    font-size: 30px;
+    font-weight: 700;
+}
+
+.result-modal .doge-reaction {
+    margin-bottom: 30px;
+}
+
+.result-modal .try-again-link {
+    color: hsla(339, 100%, 53%, 1);
 }
 
 @media (max-width: 762px) {

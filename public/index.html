@@ -4,18 +4,54 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="css/reset.css" rel="stylesheet">
+    <link href="css/fonts.css" rel="stylesheet">
     <link href="css/main.css?v=2" rel="stylesheet">
+    <link rel="stylesheet" href="css/bootstrap.css">
     <link href="favicon.png" rel="icon" type="image/png">
     <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
     <script src="js/main.js"></script>
 
     <title>Чихуахуёныши</title>
 </head>
 <body>
-    <div class="container">
-        <button class="btn-reset">Начать заново</button>
-        <div class="try-counter" data-tries-left=""></div>
-        <div class="cards" data-items-per-row=""></div>
+    <div class="main-container">
+        <div class="doggo-wrapper">
+            <img class="doggo doggo-u-l" src="img/doggo-u-l.png">
+            <img class="doggo doggo-u-r" src="img/doggo-u-r.png">
+            <img class="doggo doggo-d-l" src="img/doggo-d-l.png">
+            <img class="doggo doggo-d-r" src="img/doggo-d-r.png">
+        </div>
+
+        <div class="game-wrapper">
+            <div class="try-counter" data-tries-left=""></div>
+            <div class="cards" data-items-per-row=""></div>
+            <button class="btn-reset">Начать заново</button>
+        </div>
+    </div>
+
+    <div id="loose-modal" class="modal result-modal">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-body text-center">
+                    <img src="img/loose.webp" alt="Проигрыш" class="doge-reaction">
+                    <p class="result-text">Вы проиграли :(</p>
+                    <a class="try-again-link" href="/">Попробовать еще раз</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="win-modal" class="modal result-modal">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-body text-center">
+                    <img src="img/win.webp" alt="Проигрыш" class="doge-reaction">
+                    <p class="result-text">Вы выиграли! :)</p>
+                    <a class="try-again-link" href="/">Хочу еще раз!</a>
+                </div>
+            </div>
+        </div>
     </div>
 </body>
 </html>

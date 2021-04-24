@@ -1,0 +1,20 @@
+<svg width="1863" height="1006" viewBox="0 0 1863 1006" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g filter="url(#filter0_f)">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M1409.46 326.205C1492.17 313.445 1580.01 240.67 1650.95 285.346C1720.96 329.44 1694.79 439.321 1716.44 519.549C1736.63 594.34 1791.51 663.681 1773.38 739.004C1754.82 816.125 1695.53 886.458 1621.54 913.833C1552.33 939.441 1483.11 877.249 1409.46 873.656C1341.65 870.348 1269.52 929.818 1211.8 893.846C1154.32 858.022 1167.75 770.42 1142.51 707.285C1114.53 637.302 1040.72 578.209 1056.08 504.372C1071.51 430.242 1149.09 386.311 1216.36 352.395C1275.89 322.381 1343.65 336.358 1409.46 326.205Z" fill="#FF957F"/>
+</g>
+<g filter="url(#filter1_f)">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M521.517 96.8906C610.775 74.1199 715.251 85.8441 787.033 143.57C857.898 200.559 863.181 302.514 886.5 390.405C908.359 472.796 938.733 555.126 918.171 637.85C896.707 724.2 853.868 819.338 771.507 853.029C690.694 886.086 606.871 818.502 521.517 800.106C459.161 786.666 389.843 798.673 339.227 759.858C289.159 721.463 288.872 648.755 254.859 595.616C202.99 514.581 65.3572 461.698 88.6257 368.343C111.243 277.601 259.81 307.542 339.044 257.857C409.485 213.686 440.952 117.444 521.517 96.8906Z" fill="#6FD0D7"/>
+</g>
+<defs>
+<filter id="filter0_f" x="968" y="185" width="895" height="821" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+<feGaussianBlur stdDeviation="43" result="effect1_foregroundBlur"/>
+</filter>
+<filter id="filter1_f" x="0" y="0" width="1011" height="948" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+<feGaussianBlur stdDeviation="43" result="effect1_foregroundBlur"/>
+</filter>
+</defs>
+</svg>
